@@ -104,11 +104,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wEU-TY-V3k">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="130" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Cwh-3g-Uz9"/>
-                                <barButtonItem systemItem="add" id="M0L-te-JfP"/>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="H40-68-PiX"/>
+                                <barButtonItem style="plain" id="aCN-SW-1X6">
+                                    <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="U5n-gk-Ep3">
+                                        <rect key="frame" x="301" y="7" width="260" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="e3B-aV-5lA" id="c1o-vv-cXq"/>
+                                        </connections>
+                                    </textField>
+                                </barButtonItem>
+                                <barButtonItem systemItem="add" id="M0L-te-JfP">
+                                    <connections>
+                                        <action selector="addItem:" destination="e3B-aV-5lA" id="TDc-m4-4v2"/>
+                                    </connections>
+                                </barButtonItem>
                             </items>
                         </toolbar>
                         <prototypes>
@@ -142,9 +157,16 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="i0B-WU-PHT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="RR8-dC-bia"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="RR8-dC-bia">
+                            <connections>
+                                <action selector="share:" destination="e3B-aV-5lA" id="9gu-yj-vVI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textField" destination="U5n-gk-Ep3" id="fSl-Cb-cyK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0x-3c-1zy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

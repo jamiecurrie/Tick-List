@@ -12,10 +12,11 @@
 
 @class MainViewController;
 
-@interface TickListTableViewController : UITableViewController <UITabBarDelegate, UITableViewDataSource> {
+@interface TickListTableViewController : UITableViewController <UITabBarDelegate, UITableViewDataSource, UITextFieldDelegate> {
 }
 
 @property (strong, nonatomic) NSMutableDictionary *list;
 @property (strong, nonatomic) MainViewController *mainViewController;
+@property (strong, nonatomic) IBOutlet UITextField *textField;
 
 @end

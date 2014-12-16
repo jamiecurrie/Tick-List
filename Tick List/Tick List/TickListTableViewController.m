@@ -120,5 +120,60 @@
     return 44;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [[list objectForKey:@"list"] removeObjectAtIndex:indexPath.row];
+        [self.mainViewController updateSaves:list];
+        [self.tableView reloadData];
+        
+    }
+}
+- (IBAction)addItem:(id)sender {
+    
+    if (![self.textField.text isBlank]) {
+        
+        NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] initWithDictionary: @{@"item" : self.textField.text , @"complete" : @false}];
+        [[list objectForKey:@"list"] insertObject:itemDict atIndex:0];
+        [self.mainViewController updateSaves:list];
+        
+        [self.tableView reloadData];
+        
+        self.textField.text = nil;
+        
+    }
+
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)share:(id)sender {
+    
+    NSArray *items = [list objectForKey:@"list"];
+    NSString *listString;
+    for (NSDictionary *item in items) {
+        if (listString == nil) {
+            listString = [item objectForKey:@"item"];
+        } else {
+        listString = [listString stringByAppendingString:[NSString stringWithFormat:@"\n%@",[item objectForKey:@"item"]]];
+        }
+    }
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[listString] applicationActivities:nil];
+    [activityViewController setValue:[list objectForKey:@"listName"] forKey:@"subject"];
+    [self presentViewController:activityViewController animated:YES completion:^{}];
+    
+    
+    
+}
 
 @end
