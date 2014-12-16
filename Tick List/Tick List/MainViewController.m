@@ -62,7 +62,7 @@
         
         UIAlertView *popup = [[UIAlertView alloc] initWithTitle:@"Create a List" message:@"What would you like to call the list?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", nil];
         popup.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [popup textFieldAtIndex:0].autocapitalizationType = UITextAutocapitalizationTypeWords;
+        [popup textFieldAtIndex:0].autocapitalizationType = UITextAutocapitalizationTypeSentences;
 
         [popup show];
         

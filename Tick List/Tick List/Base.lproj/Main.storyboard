@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Tick Lists-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                             <constraint firstItem="XJh-1E-obq" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="tNN-qM-Ynx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yGD-yV-fWQ">
+                    <navigationItem key="navigationItem" title="Tick Lists" id="yGD-yV-fWQ">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="4yW-pp-7E9">
                             <connections>
                                 <action selector="wipeList:" destination="vXZ-lx-hvc" id="Oxc-Eu-aUl"/>
@@ -103,6 +103,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wEU-TY-V3k">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Cwh-3g-Uz9"/>
+                                <barButtonItem systemItem="add" id="M0L-te-JfP"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tickCell" id="Ja0-xd-q06" customClass="TickListTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -134,7 +142,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="i0B-WU-PHT">
-                        <barButtonItem key="rightBarButtonItem" title="Make Plain" id="RR8-dC-bia"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="RR8-dC-bia"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>

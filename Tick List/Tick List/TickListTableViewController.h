@@ -12,7 +12,9 @@
 
 @class MainViewController;
 
-@interface TickListTableViewController : UITableViewController <UITabBarDelegate, UITableViewDataSource>
+@interface TickListTableViewController : UITableViewController <UITabBarDelegate, UITableViewDataSource> {
+    BOOL animating;
+}
 
 @property (strong, nonatomic) NSMutableDictionary *list;
 @property (strong, nonatomic) MainViewController *mainViewController;

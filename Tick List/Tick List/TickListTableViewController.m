@@ -29,6 +29,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    animating = true;
+    
     NSDictionary *data = [[list objectForKey:@"list"] objectAtIndex:indexPath.row];
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     
@@ -40,6 +42,8 @@
         [[list objectForKey:@"list"] removeObjectAtIndex:indexPath.row];
         [[list objectForKey:@"list"] addObject:object];
         
+        [self.tableView moveRowAtIndexPath:indexPath toIndexPath:[NSIndexPath indexPathForRow:[[list objectForKey:@"list"] count] - 1 inSection:0]];
+        
     } else {
         
         [[[list objectForKey:@"list"] objectAtIndex:indexPath.row] setObject:@false forKey:@"complete"];
@@ -48,10 +52,24 @@
         [[list objectForKey:@"list"] removeObjectAtIndex:indexPath.row];
         [[list objectForKey:@"list"] insertObject:object atIndex:0];
         
+        
+        [self.tableView cellForRowAtIndexPath:indexPath].backgroundColor = [UIColor whiteColor];
+        [self.tableView moveRowAtIndexPath:indexPath toIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+
+        
     }
     
     [self.mainViewController updateSaves:list];
-    [self.tableView reloadData];
+    [self performSelector:@selector(reloadTabel) withObject:nil afterDelay:0.3];
+}
+
+-(void) reloadTabel {
+    
+    animating = false;
+ 
+    if (animating == false) {
+        [self.tableView reloadData];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
