@@ -74,6 +74,7 @@
 - (IBAction)wipeList:(id)sender {
     
     [self.textView resignFirstResponder];
+    self.textView.text = nil;
 }
 
 -(NSArray *)removeBlanks: (NSArray *) list {
@@ -142,6 +143,8 @@
     
     MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.listName.text = [[savedLists objectAtIndex:indexPath.row] objectForKey:@"listName"];
+    cell.listNumber.text = [NSString stringWithFormat:@"%i" ,[[[savedLists objectAtIndex:indexPath.row] objectForKey:@"list"] count]];
+    cell.listNumber.textAlignment = NSTextAlignmentRight;
     
     return cell;
     

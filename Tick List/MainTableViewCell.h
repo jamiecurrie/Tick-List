@@ -11,6 +11,7 @@
 @interface MainTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *listName;
+@property (strong, nonatomic) IBOutlet UILabel *listNumber;
 
 
 @end

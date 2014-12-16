@@ -14,11 +14,11 @@
 		<string>https://github.com/jamiecurrie/Tick-List.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Tick List/Tick List.xcodeproj</string>
+	<string>Tick List.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0B365B05D22E243300EBA3A9E7C18E75C7AA72DC</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jamiecurrie/Tick-List.git</string>

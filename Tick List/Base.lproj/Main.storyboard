@@ -39,20 +39,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sz-ws-YXC">
-                                                    <rect key="frame" x="18" y="11" width="564" height="21"/>
+                                                    <rect key="frame" x="18" y="12" width="509" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-dO-47D">
+                                                    <rect key="frame" x="540" y="11" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="GrF-gX-PEJ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1Sz-ws-YXC" firstAttribute="leading" secondItem="7fP-4R-nzo" secondAttribute="leadingMargin" constant="10" id="Pvm-kn-l2d"/>
-                                                <constraint firstItem="1Sz-ws-YXC" firstAttribute="top" secondItem="7fP-4R-nzo" secondAttribute="topMargin" constant="3" id="XPA-sa-ANH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1Sz-ws-YXC" secondAttribute="trailing" constant="10" id="qFv-cj-UCE"/>
+                                                <constraint firstItem="Axo-dO-47D" firstAttribute="leading" secondItem="1Sz-ws-YXC" secondAttribute="trailing" constant="13" id="V2M-jv-4mY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Axo-dO-47D" secondAttribute="trailing" constant="10" id="XFL-9W-war"/>
+                                                <constraint firstItem="1Sz-ws-YXC" firstAttribute="top" secondItem="7fP-4R-nzo" secondAttribute="topMargin" constant="4" id="qqd-xK-BOM"/>
+                                                <constraint firstItem="1Sz-ws-YXC" firstAttribute="leading" secondItem="7fP-4R-nzo" secondAttribute="leadingMargin" constant="10" id="rAS-5J-Bar"/>
+                                                <constraint firstItem="Axo-dO-47D" firstAttribute="centerY" secondItem="7fP-4R-nzo" secondAttribute="centerY" id="x2P-lD-2FK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="listName" destination="1Sz-ws-YXC" id="AJd-T0-p5X"/>
+                                            <outlet property="listNumber" destination="Axo-dO-47D" id="rRv-bV-bWe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -93,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="134"/>
+            <point key="canvasLocation" x="951" y="133"/>
         </scene>
         <!--Title-->
         <scene sceneID="OZI-Pq-6YE">
