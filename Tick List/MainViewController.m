@@ -33,6 +33,11 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [self loadTable];
+}
+
 -(void)updateSaves:(NSDictionary *)list {
 
     [savedLists replaceObjectAtIndex:listNumber withObject:list];
@@ -140,10 +145,17 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    int numberLeft = 0;
+    
+    for (NSDictionary *item in [[savedLists objectAtIndex:indexPath.row] objectForKey:@"list"]) {
+        if ([[item objectForKey:@"complete"] isEqual:@false]) {
+            numberLeft++;
+        }
+    }
     
     MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.listName.text = [[savedLists objectAtIndex:indexPath.row] objectForKey:@"listName"];
-    cell.listNumber.text = [NSString stringWithFormat:@"%i" ,[[[savedLists objectAtIndex:indexPath.row] objectForKey:@"list"] count]];
+    cell.listNumber.text = [NSString stringWithFormat:@"%i" ,numberLeft];
     cell.listNumber.textAlignment = NSTextAlignmentRight;
     
     return cell;

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91A7591F1A408A1E00BAB480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A7591E1A408A1E00BAB480 /* Images.xcassets */; };
 		91B532501A3F2FFC00BAD7AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5324F1A3F2FFC00BAD7AC /* main.m */; };
 		91B532531A3F2FFC00BAD7AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532521A3F2FFC00BAD7AC /* AppDelegate.m */; };
 		91B532591A3F2FFC00BAD7AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B532571A3F2FFC00BAD7AC /* Main.storyboard */; };
-		91B5325E1A3F2FFC00BAD7AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91B5325C1A3F2FFC00BAD7AC /* LaunchScreen.xib */; };
 		91B5326A1A3F2FFD00BAD7AC /* Tick_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532691A3F2FFD00BAD7AC /* Tick_ListTests.m */; };
 		91B532741A3F301600BAD7AC /* AwesomeBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B532731A3F301600BAD7AC /* AwesomeBD.framework */; };
 		91B5327B1A3F326B00BAD7AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5327A1A3F326B00BAD7AC /* MainViewController.m */; };
@@ -30,13 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91A7591E1A408A1E00BAB480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91B5324A1A3F2FFC00BAD7AC /* Tick List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tick List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5324E1A3F2FFC00BAD7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B5324F1A3F2FFC00BAD7AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		91B532511A3F2FFC00BAD7AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91B532521A3F2FFC00BAD7AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		91B532581A3F2FFC00BAD7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		91B5325D1A3F2FFC00BAD7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		91B532631A3F2FFC00BAD7AC /* Tick ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tick ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B532681A3F2FFC00BAD7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B532691A3F2FFD00BAD7AC /* Tick_ListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tick_ListTests.m; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				91B532571A3F2FFC00BAD7AC /* Main.storyboard */,
-				91B5325C1A3F2FFC00BAD7AC /* LaunchScreen.xib */,
+				91A7591E1A408A1E00BAB480 /* Images.xcassets */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -249,8 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A7591F1A408A1E00BAB480 /* Images.xcassets in Resources */,
 				91B532591A3F2FFC00BAD7AC /* Main.storyboard in Resources */,
-				91B5325E1A3F2FFC00BAD7AC /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,14 +319,6 @@
 				91B532581A3F2FFC00BAD7AC /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		91B5325C1A3F2FFC00BAD7AC /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91B5325D1A3F2FFC00BAD7AC /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -414,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -438,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

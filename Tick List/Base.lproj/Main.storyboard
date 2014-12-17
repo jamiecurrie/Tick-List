@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="370" width="600" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="Xrs-fO-BI0"/>
+                                    <constraint firstAttribute="height" constant="230" id="P5J-ms-k1h"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="9kF-e4-yIN" customClass="MainTableViewCell">
@@ -73,16 +73,28 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="eX7-Ic-Org"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.19999999999999968" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD TEXT HERE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV0-9U-Nil">
+                                <rect key="frame" x="234" y="162" width="132" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="Hcb-7a-fSr"/>
+                                    <constraint firstAttribute="height" constant="77" id="qdp-mV-5rG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13400124105223873" green="0.51103940217391308" blue="0.11764774133313068" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="XJh-1E-obq" secondAttribute="trailing" id="8gZ-Ge-sUx"/>
-                            <constraint firstItem="XJh-1E-obq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Dj5-kX-0Kg"/>
-                            <constraint firstItem="egE-EF-C3X" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="Ghr-GM-nsk"/>
-                            <constraint firstItem="XJh-1E-obq" firstAttribute="top" secondItem="egE-EF-C3X" secondAttribute="bottom" constant="8" symbolic="YES" id="XKo-Ym-ciK"/>
-                            <constraint firstItem="egE-EF-C3X" firstAttribute="centerX" secondItem="XJh-1E-obq" secondAttribute="centerX" id="ZLv-jG-ySm"/>
-                            <constraint firstItem="egE-EF-C3X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-8" id="dKj-gi-hXA"/>
-                            <constraint firstItem="XJh-1E-obq" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="tNN-qM-Ynx"/>
+                            <constraint firstItem="egE-EF-C3X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-8" id="4ex-Ql-Gnf"/>
+                            <constraint firstItem="egE-EF-C3X" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="Eyt-YX-jFG"/>
+                            <constraint firstItem="MV0-9U-Nil" firstAttribute="centerX" secondItem="XJh-1E-obq" secondAttribute="centerX" id="HsJ-zl-rf7"/>
+                            <constraint firstItem="MV0-9U-Nil" firstAttribute="centerX" secondItem="egE-EF-C3X" secondAttribute="centerX" id="bbl-3w-Bqc"/>
+                            <constraint firstItem="XJh-1E-obq" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="hoD-rp-9gO"/>
+                            <constraint firstItem="MV0-9U-Nil" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="98" id="kXJ-Wq-LiE"/>
+                            <constraint firstAttribute="trailing" secondItem="XJh-1E-obq" secondAttribute="trailing" id="nRw-AK-aY3"/>
+                            <constraint firstItem="XJh-1E-obq" firstAttribute="top" secondItem="egE-EF-C3X" secondAttribute="bottom" constant="8" symbolic="YES" id="no8-ix-ouw"/>
+                            <constraint firstItem="XJh-1E-obq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="yRb-eY-t9D"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tick Lists" id="yGD-yV-fWQ">
