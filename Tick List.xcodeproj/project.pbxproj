@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91063F871A498D090038C522 /* AwesomeBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91063F861A498D090038C522 /* AwesomeBD.framework */; };
 		91A7591F1A408A1E00BAB480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A7591E1A408A1E00BAB480 /* Images.xcassets */; };
 		91B532501A3F2FFC00BAD7AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5324F1A3F2FFC00BAD7AC /* main.m */; };
 		91B532531A3F2FFC00BAD7AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532521A3F2FFC00BAD7AC /* AppDelegate.m */; };
 		91B532591A3F2FFC00BAD7AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B532571A3F2FFC00BAD7AC /* Main.storyboard */; };
 		91B5326A1A3F2FFD00BAD7AC /* Tick_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532691A3F2FFD00BAD7AC /* Tick_ListTests.m */; };
-		91B532741A3F301600BAD7AC /* AwesomeBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B532731A3F301600BAD7AC /* AwesomeBD.framework */; };
 		91B5327B1A3F326B00BAD7AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5327A1A3F326B00BAD7AC /* MainViewController.m */; };
 		91B5327E1A3F328800BAD7AC /* TickListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5327D1A3F328800BAD7AC /* TickListTableViewController.m */; };
 		91B532871A3F375E00BAD7AC /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532861A3F375E00BAD7AC /* MainTableViewCell.m */; };
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91063F861A498D090038C522 /* AwesomeBD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AwesomeBD.framework; sourceTree = "<group>"; };
 		91A7591E1A408A1E00BAB480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91B5324A1A3F2FFC00BAD7AC /* Tick List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tick List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5324E1A3F2FFC00BAD7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		91B532631A3F2FFC00BAD7AC /* Tick ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tick ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B532681A3F2FFC00BAD7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B532691A3F2FFD00BAD7AC /* Tick_ListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tick_ListTests.m; sourceTree = "<group>"; };
-		91B532731A3F301600BAD7AC /* AwesomeBD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AwesomeBD.framework; sourceTree = "<group>"; };
 		91B532791A3F326B00BAD7AC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		91B5327A1A3F326B00BAD7AC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		91B5327C1A3F328800BAD7AC /* TickListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickListTableViewController.h; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91B532741A3F301600BAD7AC /* AwesomeBD.framework in Frameworks */,
+				91063F871A498D090038C522 /* AwesomeBD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +76,7 @@
 				91B5324C1A3F2FFC00BAD7AC /* Tick List */,
 				91B532661A3F2FFC00BAD7AC /* Tick ListTests */,
 				91B5324B1A3F2FFC00BAD7AC /* Products */,
-				91B532731A3F301600BAD7AC /* AwesomeBD.framework */,
+				91063F861A498D090038C522 /* AwesomeBD.framework */,
 			);
 			sourceTree = "<group>";
 		};

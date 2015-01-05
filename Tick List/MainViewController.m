@@ -16,7 +16,7 @@
 
 @implementation MainViewController
 
-@synthesize textView;
+@synthesize textView, inputHeight;
 
 #pragma Loading
 
@@ -29,6 +29,9 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    inputHeight.constant = 0;
+    CreateBtn.title = @"New List";
+    
     [self loadTable];
     
 }
@@ -39,7 +42,7 @@
 }
 
 -(void)updateSaves:(NSDictionary *)list {
-
+    
     [savedLists replaceObjectAtIndex:listNumber withObject:list];
     [Storage saveObject:savedLists withFileName:@"SAVED_LISTS"];
     
@@ -48,7 +51,7 @@
 -(void) loadTable {
     
     savedLists = [Storage openFileWithName:@"SAVED_LISTS"];
-        
+    
     if (savedLists == nil) {
         savedLists = [[NSMutableArray alloc] init];
     }
@@ -68,19 +71,85 @@
         UIAlertView *popup = [[UIAlertView alloc] initWithTitle:@"Create a List" message:@"What would you like to call the list?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", nil];
         popup.alertViewStyle = UIAlertViewStylePlainTextInput;
         [popup textFieldAtIndex:0].autocapitalizationType = UITextAutocapitalizationTypeSentences;
-
+        
         [popup show];
         
         textView.editable = true;
+        CreateBtn.title = @"New List";
+        editBtn.title = @"Edit";
+        [self setInputViewHeight:0];
+
+        
+    } else {
+        
+        if (inputHeight.constant == 0) {
+            [self performSelector:@selector(showHint:) withObject:@true afterDelay:0.2];
+            editBtn.title = @"Cancel";
+            CreateBtn.title = @"Create";
+            [self.tableView setEditing:false animated:false];
+            
+            [self setInputViewHeight:310];
+
+        } else {
+            addText.textColor = [UIColor redColor];
+            addText.alpha = 0.8f;
+
+        }
+    }
+}
+
+-(void)setInputViewHeight: (int) height {
+    
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         self.inputHeight.constant = height;
+                         [self.view layoutIfNeeded];
+                     }];
+    
+}
+
+
+
+-(void)showHint: (BOOL) input {
+    
+    if (input) {
+        addText = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+        addText.text = @"ADD TEXT HERE";
+        [addText sizeToFit];
+        addText.center = self.textViewRef.center;
+        addText.textColor = [UIColor blackColor];
+        addText.alpha = 0.4f;
+        [self.view addSubview:addText];
+    } else {
+        [addText removeFromSuperview];
     }
     
 }
 
-- (IBAction)wipeList:(id)sender {
+- (IBAction)editButton:(id)sender {
     
-    [self.textView resignFirstResponder];
-    self.textView.text = nil;
+    if ([editBtn.title isEqualToString:@"Cancel"]) {
+        [self setInputViewHeight:0];
+        editBtn.title = @"Edit";
+        CreateBtn.title = @"New List";
+        [textView resignFirstResponder];
+        textView.text = nil;
+        [self showHint:false];
+        
+    }
+    
+    else if ([editBtn.title isEqualToString:@"Done"]) {
+        [self.tableView setEditing:false animated:true];
+        editBtn.title = @"Edit";
+    }
+    
+    else if ([editBtn.title isEqualToString:@"Edit"]) {
+        [self.tableView setEditing:true animated:true];
+        editBtn.title = @"Done";
+    }
+    
 }
+
 
 -(NSArray *)removeBlanks: (NSArray *) list {
     
@@ -110,18 +179,23 @@
             list = [self removeBlanks: list];
             
             NSDictionary *listItem = @{@"listName" : listName, @"list" : list};
-                    
+            
             [savedLists addObject:listItem];
             
             [Storage saveObject:savedLists withFileName:@"SAVED_LISTS"];
-            
-            textView.text = nil;
             
             [self loadTable];
             
         }
     }
     
+    textView.text = nil;
+    
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView {
+    
+    [self showHint:false];
 }
 
 #pragma Table view
@@ -129,13 +203,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     sendDict = [savedLists objectAtIndex:indexPath.row];
-    listNumber = indexPath.row;
+    listNumber = (int)indexPath.row;
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [self performSegueWithIdentifier:@"goToList" sender:self];
     
 }
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -156,6 +229,7 @@
     MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.listName.text = [[savedLists objectAtIndex:indexPath.row] objectForKey:@"listName"];
     cell.listNumber.text = [NSString stringWithFormat:@"%i" ,numberLeft];
+    cell.listNumber.alpha = 0.5f;
     cell.listNumber.textAlignment = NSTextAlignmentRight;
     
     return cell;
@@ -169,6 +243,22 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
+}
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+    NSDictionary *data = [savedLists objectAtIndex:sourceIndexPath.row];
+    
+    NSLog(@"Moving %@ from %li to %li", data , (long)sourceIndexPath.row, (long)destinationIndexPath.row);
+    
+    [savedLists removeObjectAtIndex:sourceIndexPath.row];
+    [savedLists insertObject:data atIndex:destinationIndexPath.row];
+    [Storage saveObject:savedLists withFileName:@"SAVED_LISTS"];
+    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

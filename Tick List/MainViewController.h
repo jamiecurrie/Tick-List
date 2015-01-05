@@ -14,11 +14,16 @@
     NSMutableArray *savedLists;
     NSDictionary *sendDict;
     int listNumber;
+    IBOutlet UIBarButtonItem *editBtn;
+    IBOutlet UIBarButtonItem *CreateBtn;
+    UILabel *addText;
     
 }
 
+@property (strong, nonatomic) IBOutlet UIView *textViewRef;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *inputHeight;
 
 -(void) updateSaves: (NSDictionary *) list;
 
