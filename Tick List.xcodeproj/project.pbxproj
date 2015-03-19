@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91063F871A498D090038C522 /* AwesomeBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91063F861A498D090038C522 /* AwesomeBD.framework */; };
 		91A7591F1A408A1E00BAB480 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A7591E1A408A1E00BAB480 /* Images.xcassets */; };
 		91B532501A3F2FFC00BAD7AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5324F1A3F2FFC00BAD7AC /* main.m */; };
 		91B532531A3F2FFC00BAD7AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532521A3F2FFC00BAD7AC /* AppDelegate.m */; };
@@ -17,6 +16,7 @@
 		91B5327E1A3F328800BAD7AC /* TickListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5327D1A3F328800BAD7AC /* TickListTableViewController.m */; };
 		91B532871A3F375E00BAD7AC /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532861A3F375E00BAD7AC /* MainTableViewCell.m */; };
 		91B5328A1A3F376A00BAD7AC /* TickListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B532891A3F376A00BAD7AC /* TickListTableViewCell.m */; };
+		91F6F99F1AADACFF00A3151C /* AwesomeBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F6F99E1AADACFF00A3151C /* AwesomeBD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		91063F861A498D090038C522 /* AwesomeBD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AwesomeBD.framework; sourceTree = "<group>"; };
 		91A7591E1A408A1E00BAB480 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		91B5324A1A3F2FFC00BAD7AC /* Tick List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tick List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B5324E1A3F2FFC00BAD7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		91B532861A3F375E00BAD7AC /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		91B532881A3F376A00BAD7AC /* TickListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickListTableViewCell.h; sourceTree = "<group>"; };
 		91B532891A3F376A00BAD7AC /* TickListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickListTableViewCell.m; sourceTree = "<group>"; };
+		91F6F99E1AADACFF00A3151C /* AwesomeBD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AwesomeBD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91063F871A498D090038C522 /* AwesomeBD.framework in Frameworks */,
+				91F6F99F1AADACFF00A3151C /* AwesomeBD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +76,7 @@
 				91B5324C1A3F2FFC00BAD7AC /* Tick List */,
 				91B532661A3F2FFC00BAD7AC /* Tick ListTests */,
 				91B5324B1A3F2FFC00BAD7AC /* Products */,
-				91063F861A498D090038C522 /* AwesomeBD.framework */,
+				91F6F99E1AADACFF00A3151C /* AwesomeBD.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -422,7 +422,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -447,7 +447,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

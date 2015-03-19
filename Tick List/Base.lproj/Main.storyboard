@@ -32,7 +32,7 @@
                                         </connections>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1340012411" green="0.51103940219999999" blue="0.1176477413" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="egE-EF-C3X" secondAttribute="trailing" constant="8" id="BcD-te-9vB"/>
                                     <constraint firstAttribute="bottom" secondItem="egE-EF-C3X" secondAttribute="bottom" constant="8" id="aDu-Oa-mpW"/>

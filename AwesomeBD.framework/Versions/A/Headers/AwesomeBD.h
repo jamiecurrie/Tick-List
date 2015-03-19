@@ -30,6 +30,7 @@
 
 // Network
 #import <AwesomeBD/Network.h>
+#import "NSObject+BDJSONSTRING.h"
 
 // Socail
 #import <AwesomeBD/Social.h>
