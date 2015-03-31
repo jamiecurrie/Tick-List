@@ -13,6 +13,7 @@
 @class MainViewController;
 
 @interface TickListTableViewController : UITableViewController <UITabBarDelegate, UITableViewDataSource, UITextFieldDelegate> {
+//    NSString *celltext;
 }
 
 @property (strong, nonatomic) NSMutableDictionary *list;
