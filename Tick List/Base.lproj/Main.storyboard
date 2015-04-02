@@ -163,17 +163,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qok-sC-bAT">
-                                            <rect key="frame" x="25" y="13" width="567" height="20"/>
+                                            <rect key="frame" x="18" y="13" width="564" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Qok-sC-bAT" firstAttribute="leading" secondItem="kpd-vK-XFf" secondAttribute="leadingMargin" constant="17" id="0UA-4w-6fW"/>
+                                        <constraint firstItem="Qok-sC-bAT" firstAttribute="leading" secondItem="kpd-vK-XFf" secondAttribute="leadingMargin" constant="10" id="0UA-4w-6fW"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Qok-sC-bAT" secondAttribute="bottom" constant="2" id="8CO-CW-UmA"/>
-                                        <constraint firstItem="Qok-sC-bAT" firstAttribute="trailing" secondItem="kpd-vK-XFf" secondAttribute="trailingMargin" id="9Oh-eg-paV"/>
                                         <constraint firstItem="Qok-sC-bAT" firstAttribute="top" secondItem="kpd-vK-XFf" secondAttribute="topMargin" constant="5" id="JvG-0i-iSE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Qok-sC-bAT" secondAttribute="trailing" constant="10" id="YPR-qL-GGv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -202,7 +202,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0x-3c-1zy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647" y="131"/>
+            <point key="canvasLocation" x="1647" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YNf-lu-5Jc">
