@@ -9,6 +9,7 @@
 #import "TickListTableViewController.h"
 #import "TickListTableViewCell.h"
 #import "MainViewController.h"
+#import <sys/utsname.h>
 
 @interface TickListTableViewController ()
 
@@ -22,8 +23,10 @@
     [super viewDidLoad];
     
     self.title = [list objectForKey:@"listName"];
+    self.textField.frame = CGRectMake(0, 0, self.view.frame.size.width - 55, self.textField.frame.size.height);
     
 }
+
 
 #pragma mark - Table view data source
 
@@ -139,9 +142,17 @@
     if (![self.textField.text isBlank]) {
         
         NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] initWithDictionary: @{@"item" : self.textField.text , @"complete" : @false}];
-        [[list objectForKey:@"list"] insertObject:itemDict atIndex:0];
-        [self.mainViewController updateSaves:list];
+        int count = [[list objectForKey:@"list"] count];
         
+        int completed = 0;
+        for (NSDictionary *dict in [list objectForKey:@"list"]) {
+            if([[dict objectForKey:@"complete"] isEqual:@true]) {
+                completed++;
+            }
+        }
+        
+        [[list objectForKey:@"list"] insertObject:itemDict atIndex:(count - completed)];
+        [self.mainViewController updateSaves:list];
         [self.tableView reloadData];
         
         self.textField.text = nil;
